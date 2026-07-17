@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C Quiz - QuizCraft</title>
+    <link rel="stylesheet" href="menu.css" />
+    <style>
+        .quiz-container {
+            max-width: 650px;
+            width: 90%;
+            margin: auto;
+            margin-top: 6rem;
+            background: rgba(255, 255, 255, 0.10);
+            padding: 3rem;
+            border-radius: 1.5rem;
+            backdrop-filter: blur(14px);
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+            animation: fadeIn 1s ease-out;
+        }
+        .quiz-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .form-group { margin-bottom: 1.5rem; }
+        label {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        select, input {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            outline: none;
+            font-size: 1rem;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 0.75rem;
+            margin-top: 1rem;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            color: white;
+            font-size: 1.125rem;
+            border: none;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(236, 72, 153, 0.3);
+        }
+            select option {
+            background: #3b0764;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">
+                <div class="logo-icon">Q</div>
+                <span class="logo-text">QuizCraft</span>
+            </div>
+            <div class="nav-buttons">
+                <a href="take.html" class="btn-ghost">Back</a>
+            </div>
+        </nav>
+
+        <div class="quiz-container">
+            <h1 class="quiz-title">Start Python Programming Quiz</h1>
+            <form action="c_quiz_start.php" method="POST">
+                <div class="form-group">
+                    <label for="num">Number of Questions</label>
+                    <select name="num" id="num" required>
+                        <option value="" disabled selected>Select</option>
+                        <script>
+                            for(let i=5; i<=30; i++){
+                                document.write(`<option value="${i}">${i}</option>`);
+                            }
+                        </script>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="level">Quiz Level</label>
+                    <select name="level" id="level" required>
+                        <option value="" disabled selected>Select Level</option>
+                        <option value="simple">Simple</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-btn">Start Quiz</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
